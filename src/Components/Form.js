@@ -25,13 +25,13 @@ class Form extends Component {
   }
   componentDidUpdate(prevProps) {
     const { id } = this.props.match.params
-    if (!id && prevProps.match.params.id) {
+    if (!id && prevProps.match.params.id) { // if there is no longer an id and there was previously one (need previously one so this does not fire over and over)
       this.setState({ isEdit: false, name: "", age: "" })
     }
   }
 
   handleChange = ({ name, value }) => {
-    this.setState({ [name]: value })
+    this.setState({ [name]: value })  //name is a value on the state object and name is in brackets because it is a key (key value pairs)
   }
 
   handleAdd = () => {
